@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { useRef } from "react";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects completed" },
-  { value: 20, suffix: "+", label: "Happy clients" },
-  { value: 5, suffix: "+", label: "Years experience" },
-  { value: 10, suffix: "+", label: "Expert developers" },
+  { value: 50, suffix: "+", label: "Projects delivered" },
+  { value: 20, suffix: "+", label: "Client partnerships" },
+  { value: 5, suffix: "+", label: "Years of experience" },
+  { value: 10, suffix: "+", label: "Expert engineers" },
 ];
 
 export function Stats() {
@@ -19,7 +19,7 @@ export function Stats() {
   const scaleGlow = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.15, 0.8]);
 
   return (
-    <section ref={ref} id="stats" className="relative overflow-hidden py-16 md:py-24">
+    <section ref={ref} id="stats" className="relative overflow-hidden py-10 md:py-16">
       <motion.div
         style={reduce ? undefined : { y: yGlow, scale: scaleGlow }}
         className="absolute inset-0 -z-10"
@@ -40,13 +40,13 @@ export function Stats() {
         Impact
       </motion.span>
 
-      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+      <div className="relative mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="mb-5 text-center font-mono text-xs uppercase tracking-[0.3em] text-cyan">07 — Impact</p>
+          <p className="mb-5 text-center font-mono text-xs uppercase tracking-[0.3em] text-cyan">05 — Impact</p>
           <h2 className="mx-auto max-w-3xl text-center font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
-            Numbers that compound,
+            Proven delivery
             <br />
-            <span className="text-gradient">work that endures.</span>
+            <span className="text-gradient">at scale.</span>
           </h2>
         </Reveal>
 

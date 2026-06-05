@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Reveal } from "../Reveal";
+import { useTranslation } from "react-i18next";
 
 /* ─────────────────────────────────────────────────────────────
    3D Infrastructure Cube Visualization
@@ -268,7 +269,7 @@ function Pillar({
 }) {
   return (
     <div
-      className="border-l-2 pl-4 transition-all duration-300 hover:pl-5"
+      className="border-s-2 ps-4 transition-all duration-300 hover:ps-5"
       style={{
         borderColor:
           accent === "cyan"
@@ -321,6 +322,7 @@ function FloatCard({
    Main section
 ───────────────────────────────────────────── */
 export function About() {
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement | null>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -332,23 +334,23 @@ export function About() {
 
   const pillars: [string, string, "cyan" | "lime"][] = [
     [
-      "Scalable Architecture",
-      "Systems designed to grow with your business — from early-stage products to high-traffic production environments.",
+      t('about.pillar1.title'),
+      t('about.pillar1.desc'),
       "cyan",
     ],
     [
-      "Dedicated Product Teams",
-      "Senior engineers embedded in your workflow, aligned with your roadmap and accountable for delivery.",
+      t('about.pillar2.title'),
+      t('about.pillar2.desc'),
       "lime",
     ],
     [
-      "Secure Cloud Infrastructure",
-      "Cloud-native deployments on AWS with automated failover, encrypted data layers, and compliance-ready configurations.",
+      t('about.pillar3.title'),
+      t('about.pillar3.desc'),
       "cyan",
     ],
     [
-      "Long-Term Technical Support",
-      "Ongoing maintenance, performance monitoring, and iterative improvements well beyond the initial launch.",
+      t('about.pillar4.title'),
+      t('about.pillar4.desc'),
       "lime",
     ],
   ];
@@ -358,43 +360,39 @@ export function About() {
       ref={ref}
       id="about"
       aria-labelledby="about-heading"
-      className="relative overflow-hidden py-16 md:py-24"
+      className="relative overflow-hidden py-10 md:py-16"
     >
       {/* Watermark — reduced opacity so it supports rather than competes */}
       <motion.span
         style={reduce ? undefined : { y: yLabel }}
         aria-hidden="true"
-        className="pointer-events-none absolute -left-4 top-8 select-none whitespace-nowrap font-display text-[14vw] font-bold uppercase leading-none tracking-tight text-white/[0.018] md:text-[9vw]"
+        className="pointer-events-none absolute start-0 top-8 select-none whitespace-nowrap font-display text-[14vw] font-bold uppercase leading-none tracking-tight text-white/[0.018] md:text-[9vw]"
       >
         About
       </motion.span>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 md:grid-cols-2 md:gap-6 md:gap-8 md:px-8">
 
         {/* ── Left — copy ── */}
         <Reveal>
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-            01 — About
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
+            {t('about.badge')}
           </p>
 
           <h2
             id="about-heading"
             className="font-display text-4xl font-semibold leading-[1.05] md:text-5xl lg:text-6xl"
           >
-            Custom software built
+            {t('about.title1')}
             <br />
-            <span className="text-gradient">for scale and reliability.</span>
+            <span className="text-gradient">{t('about.title2')}</span>
           </h2>
 
-          <p className="mt-6 max-w-lg text-sm leading-[1.8] text-muted-foreground md:text-base md:leading-[1.8]">
-            We design, build, and maintain production-grade software for companies
-            that need more than a development agency — they need a technical partner.
-            Since 2021, we've delivered web platforms, mobile applications, and
-            enterprise systems across the MENA region and Europe, working directly
-            with founders, CTOs, and product teams.
+          <p className="mt-4 max-w-lg text-sm leading-[1.8] text-muted-foreground md:text-base md:leading-[1.8]">
+            {t('about.description')}
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {pillars.map(([title, desc, accent]) => (
               <Pillar key={title} title={title} desc={desc} accent={accent} />
             ))}
@@ -428,7 +426,7 @@ export function About() {
               />
 
               {/* Status bar */}
-              <div className="relative flex items-center justify-between border-b border-white/[0.06] px-5 py-3">
+              <div className="relative flex items-center justify-between border-b border-white/[0.06] px-4 py-2">
                 <div className="flex items-center gap-2">
                   <span
                     className="h-2 w-2 rounded-full"
@@ -440,7 +438,7 @@ export function About() {
                     aria-hidden="true"
                   />
                   <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">
-                    Infrastructure · Active
+                    {t('about.infra.status')}
                   </span>
                 </div>
                 <span className="font-mono text-[10px] text-white/25">
@@ -449,16 +447,16 @@ export function About() {
               </div>
 
               {/* 3D cube visualization */}
-              <div className="relative px-6 py-8 md:px-8 md:py-10">
+              <div className="relative px-6 py-6 md:px-8 md:py-8">
                 <InfraCube reduced={!!reduce} />
               </div>
 
               {/* Bottom metrics row */}
               <div className="grid grid-cols-3 divide-x divide-white/[0.06] border-t border-white/[0.06]">
                 {[
-                  { label: "Uptime", value: "99.99%", color: "var(--cyan)" },
-                  { label: "Regions", value: "3+",    color: "var(--lime)" },
-                  { label: "Response", value: "<50ms", color: "var(--cyan)" },
+                  { label: t('about.infra.uptimeLabel'), value: "99.99%", color: "var(--cyan)" },
+                  { label: t('about.infra.regionsLabel'), value: "3+",    color: "var(--lime)" },
+                  { label: t('about.infra.responseLabel'), value: "<50ms", color: "var(--cyan)" },
                 ].map((m) => (
                   <div key={m.label} className="px-4 py-3 text-center">
                     <p
@@ -477,18 +475,18 @@ export function About() {
 
             {/* Floating card — bottom left */}
             <FloatCard
-              label="Est. 2021"
-              value="London · Dubai · Cairo"
+              label={t('about.float1.label')}
+              value={t('about.float1.value')}
               accent="lime"
-              className="absolute -bottom-6 -left-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              className="absolute -bottom-6 ltr:left-4 rtl:right-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             />
 
             {/* Floating card — top right */}
             <FloatCard
-              label="Cloud-native"
-              value="Multi-region deploy"
+              label={t('about.float2.label')}
+              value={t('about.float2.value')}
               accent="cyan"
-              className="absolute -right-5 -top-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              className="absolute ltr:right-4 rtl:left-4 -top-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             />
           </div>
         </Reveal>

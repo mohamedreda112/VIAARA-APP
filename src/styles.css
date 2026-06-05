@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -108,10 +110,24 @@
     word-break: break-word;
   }
 
-  /* Improve tap targets on mobile */
-  a, button { min-height: 44px; }
-  /* But allow inline elements to be smaller */
-  span a, p a { min-height: unset; }
+  /* Improve tap targets on mobile — only for block/flex interactive elements */
+  button:not([class*="text-"]):not([class*="font-mono"]):not([class*="rounded-full"][class*="p-2"]) { min-height: 44px; }
+  /* Standalone anchor links (not inline) */
+  a.btn, a[class*="rounded-full"][class*="px-"], a[class*="inline-flex"] { min-height: 44px; }
+  /* Remove min-height from all inline/text-style elements */
+  span a, p a, li a, nav a, nav li a, a.text-sm, a.text-xs { min-height: unset; }
+
+  /* ── RTL & Arabic Typography Overrides ── */
+  html[dir="rtl"] body {
+    font-family: "Tajawal", var(--font-sans);
+    line-height: 1.6; /* Tighter Arabic line-height for better density */
+  }
+
+  html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4, html[dir="rtl"] .font-display {
+    font-family: "Tajawal", var(--font-display);
+    line-height: 1.3;
+    letter-spacing: normal; /* Arabic usually shouldn't have tight tracking */
+  }
 
   ::selection { background: var(--cyan); color: var(--background); }
 
@@ -240,6 +256,9 @@
   @media (min-width: 768px) {
     .section-pad { padding-top: 7rem; padding-bottom: 7rem; }
   }
+
+  /* ── Overflow safety: prevent horizontal scroll on all pages ── */
+  .page-root { overflow-x: clip; }
 }
 
 /* ── Keyframe animations ── */

@@ -7,73 +7,73 @@ const plans = [
     name: "Starter",
     price: "$4.9k",
     period: "avg / project",
-    desc: "Perfect for validation, early MVPs, sleek landing pages, and interactive prototypes.",
+    desc: "For early-stage products, MVPs, and standalone web applications that need quality engineering from the start.",
     features: [
       "Custom UI/UX Design (Figma)",
-      "High-Performance Web App (Next.js/React)",
-      "Basic Database Integration",
-      "SEO & Speed Optimization",
+      "High-Performance Web Application (Next.js/React)",
+      "Database Design & Integration",
+      "SEO & Performance Optimisation",
       "30 Days Post-Launch Support",
-      "Standard Communication Channel",
+      "Dedicated Communication Channel",
     ],
     recommended: false,
-    cta: "Validate Your Idea",
+    cta: "Start Your Project",
   },
   {
     name: "Business",
     price: "$12.5k",
     period: "avg / project",
-    desc: "Designed for scaling brands, custom secure SaaS, and native cross-platform mobile apps.",
+    desc: "For growing businesses building scalable SaaS platforms, enterprise tools, or cross-platform mobile products.",
     features: [
       "Everything in Starter",
       "iOS & Android Mobile App (Flutter)",
-      "Complex Database Integration (Postgre/NoSQL)",
-      "Admin Control Panel & Dashboard Analytics",
+      "Complex Database Architecture (PostgreSQL/NoSQL)",
+      "Admin Dashboard & Analytics Panel",
       "Dedicated Project Manager",
       "90 Days Post-Launch Maintenance",
-      "Direct Private Slack Channel",
+      "Direct Communication Channel",
     ],
     recommended: true,
-    cta: "Launch Your Platform",
+    cta: "Scale Your Product",
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "contact for quote",
-    desc: "For customized multi-tenant SaaS, complex internal ERP suites, and heavy high-volume architectures.",
+    desc: "For complex multi-tenant platforms, enterprise integrations, high-volume systems, and regulated industry requirements.",
     features: [
       "Everything in Business",
-      "Custom ERP & System Automation Integrations",
-      "High-Load Cloud Scale (AWS/Kubernetes)",
-      "Strict HIPAA / SOC2 Compliance Alignment",
-      "Bi-Weekly Strategy & Code Audit Sessions",
-      "24/7 Priority Emergency Support SLA",
-      "Dedicated Full-Stack Developer Pods",
+      "Custom Enterprise Systems & Workflow Automation",
+      "High-Availability Cloud Infrastructure (AWS/Kubernetes)",
+      "HIPAA / SOC2 Compliance Alignment",
+      "Bi-Weekly Strategy & Architecture Reviews",
+      "24/7 Priority Support SLA",
+      "Dedicated Full-Stack Engineering Team",
     ],
     recommended: false,
-    cta: "Scale Your Business",
+    cta: "Request a Proposal",
   },
 ];
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative overflow-hidden py-16 md:py-24">
+    <section id="pricing" className="relative overflow-hidden py-10 md:py-16">
       {/* Glow shapes */}
-      <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan/5 blur-3xl pointer-events-none" />
+      <div className="absolute -start-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan/5 blur-3xl pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-            09 — Pricing Structures
+            11 — Pricing
           </p>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-12 md:mb-24">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-8 md:mb-24">
             <h2 className="max-w-2xl font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
-              Predictable models,
+              Transparent investment,
               <br />
-              <span className="text-gradient">engineered to deliver.</span>
+              <span className="text-gradient">structured for delivery.</span>
             </h2>
             <p className="max-w-md text-muted-foreground">
-              Transparent, value-driven structures aligned with your engineering scope. No hidden fees, clear milestones, and clean delivery.
+              Clear, value-driven engagement models aligned to your project scope. No hidden fees, defined milestones, and accountable delivery at every stage.
             </p>
           </div>
         </Reveal>
@@ -92,7 +92,7 @@ export function Pricing() {
               >
                 {/* Recommended Float */}
                 {p.recommended && (
-                  <div className="absolute right-8 top-0 -translate-y-1/2 rounded-full bg-gradient-brand px-4 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] font-bold text-primary-foreground shadow-[0_0_20px_rgba(63,207,213,0.4)]">
+                  <div className="absolute top-0 -translate-y-1/2 rounded-full bg-gradient-brand px-4 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] font-bold text-primary-foreground shadow-[0_0_20px_rgba(63,207,213,0.4)]">
                     Most Popular
                   </div>
                 )}

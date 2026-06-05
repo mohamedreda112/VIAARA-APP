@@ -1,71 +1,75 @@
 import { Reveal } from "../Reveal";
 import { Search, Map, Palette, Terminal, ShieldAlert, Rocket, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-const steps = [
+const getSteps = (t: any) => [
   {
     num: "01",
-    title: "Discovery",
+    title: t('process.steps.0.title'),
     icon: Search,
-    desc: "We analyze your business targets, map user needs, and explore technical constraints to lay a bulletproof project foundation.",
+    desc: t('process.steps.0.desc'),
   },
   {
     num: "02",
-    title: "Planning",
+    title: t('process.steps.1.title'),
     icon: Map,
-    desc: "We construct rigorous system wireframes, define modular database schemas, and outline a realistic milestone schedule.",
+    desc: t('process.steps.1.desc'),
   },
   {
     num: "03",
-    title: "UI/UX Design",
+    title: t('process.steps.2.title'),
     icon: Palette,
-    desc: "We engineer intuitive user flows and high-end interactive mockups, shaping a premium visual identity custom to your brand.",
+    desc: t('process.steps.2.desc'),
   },
   {
     num: "04",
-    title: "Development",
+    title: t('process.steps.3.title'),
     icon: Terminal,
-    desc: "Our senior software developers code scalable architectures, writing highly optimized clean code utilizing modern tech stacks.",
+    desc: t('process.steps.3.desc'),
   },
   {
     num: "05",
-    title: "Testing",
+    title: t('process.steps.4.title'),
     icon: ShieldAlert,
-    desc: "We perform heavy automated unit testing, end-to-end integration reviews, and security auditing to ensure absolute reliability.",
+    desc: t('process.steps.4.desc'),
   },
   {
     num: "06",
-    title: "Deployment",
+    title: t('process.steps.5.title'),
     icon: Rocket,
-    desc: "We launch your ecosystem to secure cloud infrastructures (AWS/Vercel) with redundant cluster failovers and zero-downtime.",
+    desc: t('process.steps.5.desc'),
   },
   {
     num: "07",
-    title: "Support",
+    title: t('process.steps.6.title'),
     icon: HeartHandshake,
-    desc: "We provide round-the-clock maintenance, proactive telemetry monitoring, speed optimizations, and future feature planning.",
+    desc: t('process.steps.6.desc'),
   },
 ];
 
 export function Process() {
+  const { t } = useTranslation();
+  const steps = getSteps(t);
+
   return (
-    <section id="process" className="relative overflow-hidden py-16 md:py-24">
+    <section id="process" className="relative overflow-hidden py-10 md:py-16">
       {/* Background decoration grid */}
       <div className="grid-bg absolute inset-0 opacity-20 -z-10" />
 
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-            06 — Operational Workflow
+            {t('process.badge')}
           </p>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-24">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-12">
             <h2 className="max-w-2xl font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
-              From initial spark,
+              {t('process.title1')}
               <br />
-              <span className="text-gradient">to scale in production.</span>
+              <span className="text-gradient">{t('process.title2')}</span>
             </h2>
             <p className="max-w-md text-muted-foreground">
-              A comprehensive, zero-waste developmental pipeline that keeps stakeholders in the loop while prioritizing speed, security, and elite code quality.
+              {t('process.description')}
             </p>
           </div>
         </Reveal>
@@ -73,12 +77,12 @@ export function Process() {
         {/* Timeline container */}
         <div className="relative">
           {/* Vertical Connecting line (hidden on mobile, visible on desktop) */}
-          <div className="absolute left-[36px] top-6 bottom-6 hidden w-[2px] bg-gradient-to-b from-cyan via-lime to-transparent md:block opacity-35" />
+          <div className="absolute rtl:right-[36px] ltr:left-[36px] top-6 bottom-6 hidden w-[2px] bg-gradient-to-b from-cyan via-lime to-transparent md:block opacity-35" />
 
           <div className="space-y-12">
             {steps.map((s, i) => (
               <Reveal key={s.num} delay={i * 0.08}>
-                <div className="relative flex flex-col md:flex-row md:gap-14">
+                <div className="relative flex flex-col md:flex-row md:gap-8">
                   {/* Left Column: Glowing Icon Marker */}
                   <div className="relative z-10 mb-4 flex items-center gap-4 md:mb-0">
                     <motion.div
@@ -110,10 +114,10 @@ export function Process() {
                       </h3>
                       {/* Numeric chip inside card on desktop */}
                       <span className="hidden rounded-full border border-cyan/20 bg-cyan/5 px-3.5 py-1 font-mono text-xs text-cyan md:inline-block">
-                        Step {s.num}
+                        {t('process.stepPrefix')} {s.num}
                       </span>
                     </div>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-4xl">
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-4xl">
                       {s.desc}
                     </p>
                   </motion.div>

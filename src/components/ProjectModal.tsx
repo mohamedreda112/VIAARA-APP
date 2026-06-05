@@ -14,18 +14,22 @@ import {
   ChevronRight,
   Calendar,
   Tag,
+  Layers,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 /* ─────────────────────────────────────────────────────────────
    Types
 ───────────────────────────────────────────────────────────── */
 export interface ProjectData {
   title: string;
+  type: string;
   category: string;
   year?: string;
   desc: string;
   longDesc?: string;
+  keyFeatures?: string[];
   tech: string[];
   accentColor: string;      // rgba — glows / tints
   accentColorSolid: string; // hex  — borders / text
@@ -64,12 +68,12 @@ function NeonBorder({ color }: { color: string }) {
         initial={{ scaleX: 0, transformOrigin: "right" }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.7, delay: 0.08, ease }} />
-      <motion.span className="absolute inset-y-0 left-0 w-[1.5px]"
+      <motion.span className="absolute inset-y-0- w-[1.5px]"
         style={{ background: grad180 }}
         initial={{ scaleY: 0, transformOrigin: "top" }}
         animate={{ scaleY: 1 }}
         transition={{ duration: 0.7, delay: 0.04, ease }} />
-      <motion.span className="absolute inset-y-0 right-0 w-[1.5px]"
+      <motion.span className="absolute inset-y-0- w-[1.5px]"
         style={{ background: grad180 }}
         initial={{ scaleY: 0, transformOrigin: "bottom" }}
         animate={{ scaleY: 1 }}
@@ -127,11 +131,11 @@ function Carousel({ project }: { project: ProjectData }) {
 
         {/* corner glow */}
         <div aria-hidden="true"
-             className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full blur-3xl opacity-25"
+             className="pointer-events-none absolute end- -top-8 h-28 w-28 rounded-full blur-3xl opacity-25"
              style={{ background: project.accentColor }} />
 
         {/* counter + arrows row */}
-        <div className="absolute bottom-3 left-4 right-3 flex items-center justify-between">
+        <div className="absolute bottom-3-- flex items-center justify-between">
           <span className="font-mono text-[11px] select-none text-white/40">
             <span className="font-semibold text-white/80">
               {String(active + 1).padStart(2, "0")}
@@ -201,6 +205,7 @@ function NavBtn({ onClick, label, icon }: { onClick: () => void; label: string; 
    Main Modal
 ───────────────────────────────────────────── */
 export function ProjectModal({ project, onClose }: Props) {
+  const { t } = useTranslation();
   const rightPanelRef = useRef<HTMLDivElement>(null);
 
   /* ESC to close */
@@ -288,7 +293,7 @@ export function ProjectModal({ project, onClose }: Props) {
                       className="font-mono text-[10px] font-semibold uppercase tracking-[0.28em]"
                       style={{ color: project.accentColorSolid }}
                     >
-                      {project.category}
+                      {t(`projects.categories.${project.category}`, project.category)}
                     </span>
                   </div>
 
@@ -358,32 +363,60 @@ export function ProjectModal({ project, onClose }: Props) {
                       </div>
                       <div className="min-w-0">
                         <h2 className="font-display text-[1.15rem] font-bold leading-tight text-foreground sm:text-xl md:text-2xl">
-                          {project.title}
+                          {t(`projects.items.${project.title}.title`, project.title)}
                         </h2>
                         <p
                           className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.22em]"
                           style={{ color: project.accentColorSolid }}
                         >
-                          {project.category}
+                          {t(`projects.categories.${project.category}`, project.category)}
                         </p>
                       </div>
                     </div>
 
                     {/* Meta pills */}
                     <div className="flex flex-wrap gap-2">
-                      <MetaPill icon={<Tag size={9} />} label={project.category} />
+                      <MetaPill icon={<Layers size={9} />} label={t(`projects.categories.${project.type}`, project.type)} />
+                      <MetaPill icon={<Tag size={9} />} label={t(`projects.categories.${project.category}`, project.category)} />
                       {project.year && <MetaPill icon={<Calendar size={9} />} label={project.year} />}
                     </div>
 
                     {/* Description */}
                     <p className="text-[13px] leading-[1.7] text-muted-foreground sm:text-sm">
-                      {project.longDesc ?? project.desc}
+                      {t(`projects.items.${project.title}.longDesc`, project.longDesc ?? project.desc)}
                     </p>
+
+                    {/* Key Features */}
+                    {project.keyFeatures && project.keyFeatures.length > 0 && (
+                      <div>
+                        <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.3em] text-white/30">
+                          {t('projectModal.keyFeatures')}
+                        </p>
+                        <ul className="flex flex-col gap-2">
+                          {(t(`projects.items.${project.title}.keyFeatures`, { returnObjects: true }) as string[] ?? project.keyFeatures).map((kf, i) => (
+                            <motion.li
+                              key={i}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.16 + i * 0.04, duration: 0.25 }}
+                              className="flex items-start gap-2 text-[13px] text-muted-foreground sm:text-sm"
+                            >
+                              <span
+                                className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                style={{ background: project.accentColorSolid }}
+                                aria-hidden="true"
+                              />
+                              {kf}
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     {/* Technologies */}
                     <div>
                       <p className="mb-2.5 font-mono text-[9px] uppercase tracking-[0.3em] text-white/30">
-                        Technologies Used
+                        {t('projectModal.techUsed')}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {project.tech.map((t, i) => (
@@ -447,14 +480,14 @@ export function ProjectModal({ project, onClose }: Props) {
                     >
                       <ModalBtn
                         href={project.liveUrl ?? "#contact"}
-                        label="Live Preview"
+                        label={t('projectModal.livePreview')}
                         icon={<ExternalLink size={13} aria-hidden="true" />}
                         variant="primary"
                         accentColor={project.accentColorSolid}
                       />
                       <ModalBtn
                         href={project.githubUrl ?? "#contact"}
-                        label="View on GitHub"
+                        label={t('projectModal.viewOnGithub')}
                         icon={<Github size={13} aria-hidden="true" />}
                         variant="ghost"
                         accentColor={project.accentColorSolid}
@@ -463,11 +496,11 @@ export function ProjectModal({ project, onClose }: Props) {
 
                     {/* ESC hint */}
                     <p className="pb-1 text-center font-mono text-[9px] uppercase tracking-[0.18em] text-white/20">
-                      Press{" "}
+                      {t('projectModal.press')}{" "}
                       <kbd className="rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[8px] text-white/35">
                         ESC
                       </kbd>{" "}
-                      to close
+                      {t('projectModal.toClose')}
                     </p>
                   </motion.div>
                 </div>

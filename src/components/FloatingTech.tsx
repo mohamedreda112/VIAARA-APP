@@ -51,7 +51,7 @@ export function FloatingTech() {
       {Array.from({ length: 3 }).map((_, i) => (
         <div
           key={`l-${i}`}
-          className="absolute left-0 right-0 h-px"
+          className="absolute - h-px"
           style={{
             top: `${30 + i * 22}%`,
             background:

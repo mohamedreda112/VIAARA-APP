@@ -3,8 +3,11 @@ import {
   Outlet,
   Link,
   createRootRouteWithContext,
-  useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { PageTransition } from "@/components/PageTransition";
 
 import appCss from "../styles.css?url";
 
@@ -32,7 +35,6 @@ function NotFoundComponent() {
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
-  const router = useRouter();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -46,7 +48,6 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
-              router.invalidate();
               reset();
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -70,11 +71,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "description", content: "VIAARA is an elite software engineering agency building scalable web apps, mobile platforms, enterprise ERP systems, and AI-powered digital products for ambitious companies worldwide." },
+      {
+        name: "description",
+        content:
+          "VIAARA is a software engineering company specializing in custom software development, web applications, mobile apps, cloud solutions, AI systems, and digital transformation services.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "VIAARA" },
-      { property: "og:title", content: "VIAARA — Custom Software House & Systems Engineering" },
-      { property: "og:description", content: "High-performance custom software, web platforms, and enterprise systems engineered with craft from concept to production at scale." },
+      {
+        property: "og:title",
+        content: "VIAARA — Custom Software Development & Digital Solutions",
+      },
+      {
+        property: "og:description",
+        content:
+          "VIAARA is a software engineering company specializing in custom software development, web applications, mobile apps, cloud solutions, AI systems, and digital transformation services.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "index, follow" },
     ],
@@ -92,10 +104,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const routerState = useRouterState();
+  const currentPath = routerState.location.pathname;
+
+  // Scroll to top on every route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [currentPath]);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <AnimatePresence mode="wait" initial={false}>
+        <PageTransition routeKey={currentPath}>
+          <Outlet />
+        </PageTransition>
+      </AnimatePresence>
     </QueryClientProvider>
   );
 }

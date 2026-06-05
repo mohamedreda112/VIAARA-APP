@@ -3,16 +3,10 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { Clients } from "@/components/sections/Clients";
-import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
-import { TechStack } from "@/components/sections/TechStack";
-import { Work } from "@/components/sections/Work";
-import { Projects } from "@/components/sections/Projects";
 import { Process } from "@/components/sections/Process";
-import { Stats } from "@/components/sections/Stats";
+import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Team } from "@/components/sections/Team";
-import { Pricing } from "@/components/sections/Pricing";
-import { Voices } from "@/components/sections/Voices";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Contact } from "@/components/sections/Contact";
@@ -47,16 +41,10 @@ function Index() {
       <main className="relative">
         <Hero />
         <Clients />
-        <About />
         <Services />
-        <TechStack />
-        <Work />
-        <Projects />
         <Process />
-        <Stats />
-        <Team />
-        <Pricing />
-        <Voices />
+        <FeaturedProjects />
+        <Team preview />
         <FAQ />
         <CTABanner />
         <Contact />

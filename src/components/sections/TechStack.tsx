@@ -137,15 +137,15 @@ export function TechStack() {
   const categories = ["Frontend", "Backend", "Backend / AI", "Mobile", "Databases", "Databases / Cloud", "Cloud & Devops"];
   
   return (
-    <section id="techstack" className="relative overflow-hidden py-16 md:py-24 bg-black/10">
+    <section id="techstack" className="relative overflow-hidden py-10 md:py-16 bg-black/10">
       {/* Background neon elements */}
-      <div className="absolute right-0 top-1/4 -z-10 h-72 w-72 rounded-full bg-cyan/5 blur-3xl pointer-events-none" />
-      <div className="absolute left-0 bottom-1/4 -z-10 h-72 w-72 rounded-full bg-lime/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -z-10 h-72 w-72 rounded-full bg-cyan/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -z-10 h-72 w-72 rounded-full bg-lime/5 blur-3xl pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-lime">
-            03 — Technical Ecosystem
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
+            10 — Tech Stack
           </p>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-20">
             <h2 className="max-w-2xl font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
@@ -172,7 +172,7 @@ export function TechStack() {
               >
                 {/* Radial Glow Backdrop */}
                 <div
-                  className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-60"
+                  className="pointer-events-none absolute end- -top-8 h-20 w-20 rounded-full blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-60"
                   style={{ backgroundColor: t.glow }}
                 />
 

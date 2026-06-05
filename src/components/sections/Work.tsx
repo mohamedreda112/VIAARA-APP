@@ -204,7 +204,7 @@ function ArchNode({
     >
       {/* status dot */}
       <span
-        className="absolute right-2.5 top-2.5 h-1.5 w-1.5 rounded-full"
+        className="absolute top-2.5 h-1.5 w-1.5 rounded-full"
         style={{
           background: color,
           boxShadow: `0 0 6px ${color}`,
@@ -320,11 +320,11 @@ function DeployTerminal() {
         <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
-        <span className="ml-2 font-mono text-[10px] text-white/30">
+        <span className="ms- font-mono text-[10px] text-white/30">
           viaara-ci — deploy pipeline
         </span>
         <span
-          className="ml-auto flex items-center gap-1.5 font-mono text-[9px]"
+          className="ms- flex items-center gap-1.5 font-mono text-[9px]"
           style={{ color: "#A8D03A" }}
         >
           <span
@@ -467,8 +467,8 @@ export function Work() {
     <section
       ref={sectionRef}
       id="work"
-      aria-label="Enterprise Architecture — Infrastructure engineered for scale"
-      className="relative overflow-hidden py-20 md:py-32"
+      aria-label="Technical Architecture — Our Engineering Foundation"
+      className="relative overflow-hidden py-10 md:py-16"
     >
       {/* ── Background layers ── */}
       <div className="grid-bg absolute inset-0 opacity-30" aria-hidden="true" />
@@ -491,7 +491,7 @@ export function Work() {
       <motion.span
         style={reduce ? undefined : { y: yWord }}
         aria-hidden="true"
-        className="pointer-events-none absolute -right-8 top-16 select-none whitespace-nowrap font-display text-[14vw] font-bold uppercase leading-none tracking-tight text-white/[0.022] md:text-[10vw]"
+        className="pointer-events-none absolute end- top-16 select-none whitespace-nowrap font-display text-[14vw] font-bold uppercase leading-none tracking-tight text-white/[0.022] md:text-[10vw]"
       >
         Architecture
       </motion.span>
@@ -500,7 +500,7 @@ export function Work() {
       <DataParticles reduced={!!reduce} />
 
       {/* ── Content ── */}
-      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+      <div className="relative mx-auto max-w-7xl px-6">
 
         {/* Section header */}
         <Reveal>
@@ -509,14 +509,12 @@ export function Work() {
           </p>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <h2 className="max-w-3xl font-display text-4xl font-semibold leading-[1.04] md:text-6xl">
-              Infrastructure engineered
+              Infrastructure built
               <br />
-              <span className="text-gradient">for infinite scale.</span>
+              <span className="text-gradient">for every stage of growth.</span>
             </h2>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">
-              Cloud-native systems with distributed architectures, automated
-              CI/CD pipelines, and enterprise-grade reliability — built to
-              handle millions of requests without breaking a sweat.
+              Cloud-native, distributed architectures with automated CI/CD, enterprise-grade security, and multi-region reliability — built to scale alongside your business.
             </p>
           </div>
         </Reveal>
@@ -540,12 +538,12 @@ export function Work() {
               {/* Corner accent glows */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full blur-3xl opacity-20"
+                className="pointer-events-none absolute start- -top-16 h-48 w-48 rounded-full blur-3xl opacity-20"
                 style={{ background: "var(--cyan)" }}
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full blur-3xl opacity-15"
+                className="pointer-events-none absolute -bottom-16-end- h-48 w-48 rounded-full blur-3xl opacity-15"
                 style={{ background: "var(--lime)" }}
               />
 

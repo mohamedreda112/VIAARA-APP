@@ -4,8 +4,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import { Logo } from "../Logo";
 import { FloatingTech } from "../FloatingTech";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement | null>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -20,7 +22,7 @@ export function Hero() {
       ref={ref}
       id="top"
       aria-label="Hero — VIAARA Software Engineering Agency"
-      className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden pt-24"
+      className="relative isolate flex flex-col justify-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24"
     >
       {/* layer 1 — background image */}
       <motion.div
@@ -61,48 +63,47 @@ export function Hero() {
         className="relative mx-auto max-w-6xl px-5 text-center md:px-8"
       >
         {/* Badge */}
-        <div className="mx-auto mb-6 flex items-center justify-center sm:mb-7">
+        <div className="mx-auto mb-5 flex items-center justify-center">
           <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.22em] text-cyan sm:text-xs">
             <Sparkles size={12} className="text-lime flex-shrink-0" aria-hidden="true" />
-            Expert Software House &amp; Tech Partner
+            {t('hero.badge')}
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl md:text-7xl lg:text-[7.5rem]">
-          We engineer
+        <h1 className="font-display text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-[3.5rem] lg:text-[6rem]">
+          {t('hero.title1')}
           <br />
-          <span className="text-gradient">high-performance systems</span>
+          <span className="text-gradient">{t('hero.title2')}</span>
           <br />
-          &amp; custom apps.
+          {t('hero.title3')}
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-7 sm:max-w-2xl sm:text-base md:text-lg">
-          VIAARA designs, codes, and launches robust web applications, mobile platforms,
-          and enterprise solutions for ambitious enterprises worldwide.
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:max-w-2xl sm:text-base md:text-lg">
+          {t('hero.subtitle')}
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row">
           <a
             href="#contact"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_0_50px_-10px_var(--cyan)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_60px_-8px_var(--cyan)] sm:w-auto"
           >
-            Start Your Project
+            {t('hero.ctaStart')}
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </a>
           <a
             href="#about"
             className="glass inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-white/8 sm:w-auto"
           >
-            Explore Our Work
+            {t('hero.ctaView')}
           </a>
         </div>
 
         {/* Trust indicators */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:mt-12">
-          {["50+ Projects Delivered", "20+ Happy Clients", "5+ Years Experience"].map((item) => (
+          {[t('hero.stat1'), t('hero.stat2'), t('hero.stat3')].map((item) => (
             <span key={item} className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
               <span className="h-1 w-1 rounded-full bg-cyan/60" aria-hidden="true" />
               {item}
@@ -120,18 +121,17 @@ export function Hero() {
 
       {/* Scan line */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan to-transparent opacity-40 animate-scan" />
+        <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-cyan to-transparent opacity-40 animate-scan" />
       </div>
 
       {/* Bottom marquee */}
       <div className="marquee-mask absolute bottom-6 left-0 right-0 overflow-hidden" aria-hidden="true">
-        <div className="flex w-max animate-drift gap-12 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground/60">
+        <div className="flex w-max animate-drift gap-8 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground/60">
           {Array.from({ length: 2 }).flatMap((_, j) =>
-            [
-              "web development", "·", "mobile apps", "·", "enterprise systems", "·",
-              "cloud engineering", "·", "devops & scale", "·", "custom erp", "·",
-              "ui/ux design", "·", "ai integrations", "·",
-            ].map((t, i) => <span key={`${j}-${i}`}>{t}</span>),
+            (t('hero.marquee', { returnObjects: true }) as string[]).flatMap((t, i) => [
+              <span key={`${j}-${i}`}>{t}</span>,
+              <span key={`${j}-${i}-dot`}>·</span>
+            ]).slice(0, -1)
           )}
         </div>
       </div>

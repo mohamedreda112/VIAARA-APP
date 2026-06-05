@@ -70,7 +70,7 @@ function Calendar({
           "select-none font-medium",
           captionLayout === "label"
             ? "text-sm"
-            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pl-2 pr-1 text-sm [&>svg]:size-3.5",
+            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md ps- pe- text-sm [&>svg]:size-3.5",
           defaultClassNames.caption_label,
         ),
         table: "w-full border-collapse",
@@ -86,12 +86,12 @@ function Calendar({
           defaultClassNames.week_number,
         ),
         day: cn(
-          "group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md",
+          "group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-s- [&:last-child[data-selected=true]_button]:rounded-e-",
           defaultClassNames.day,
         ),
-        range_start: cn("bg-accent rounded-l-md", defaultClassNames.range_start),
+        range_start: cn("bg-accent rounded-s-", defaultClassNames.range_start),
         range_middle: cn("rounded-none", defaultClassNames.range_middle),
-        range_end: cn("bg-accent rounded-r-md", defaultClassNames.range_end),
+        range_end: cn("bg-accent rounded-e-", defaultClassNames.range_end),
         today: cn(
           "bg-accent text-accent-foreground rounded-md data-[selected=true]:rounded-none",
           defaultClassNames.today,

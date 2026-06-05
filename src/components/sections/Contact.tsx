@@ -1,17 +1,18 @@
 import { Reveal } from "../Reveal";
 import { Logo } from "../Logo";
-import { ArrowRight, Mail, MapPin, Github, Twitter, Linkedin, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Github, Twitter, Linkedin, Phone } from "lucide-react";
 import orb from "@/assets/orb-2.jpg";
 import { useState, useRef, type FormEvent } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 /* ── Footer quick links ── */
-const FOOTER_LINKS = [
-  { label: "About",     href: "#about" },
-  { label: "Services",  href: "#services" },
-  { label: "Portfolio", href: "#projects" },
-  { label: "Pricing",   href: "#pricing" },
-  { label: "Contact",   href: "#contact" },
+const getFooterLinks = (t: any) => [
+  { label: t('nav.about'),     href: "#about" },
+  { label: t('nav.services'),  href: "#services" },
+  { label: t('nav.portfolio'), href: "#projects" },
+  { label: t('nav.pricing'),   href: "#pricing" },
+  { label: t('nav.contact'),   href: "#contact" },
 ];
 
 const SOCIAL_LINKS = [
@@ -43,7 +44,7 @@ function Field({
         className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
       >
         {label}
-        {required && <span className="ml-1 text-cyan" aria-hidden="true">*</span>}
+        {required && <span className="ms-0.5 text-cyan" aria-hidden="true">*</span>}
       </label>
       <input
         id={name}
@@ -70,6 +71,8 @@ function Field({
 
 /* ── Main section ── */
 export function Contact() {
+  const { t } = useTranslation();
+  const FOOTER_LINKS = getFooterLinks(t);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -88,13 +91,13 @@ export function Contact() {
     const email = (data.get("email") as string)?.trim();
     const desc  = (data.get("description") as string)?.trim();
 
-    if (!name)  errs.name  = "Name is required.";
-    if (!email) errs.email = "Email is required.";
+    if (!name)  errs.name  = t('contact.form.errors.name');
+    if (!email) errs.email = t('contact.form.errors.email');
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      errs.email = "Please enter a valid email address.";
-    if (!desc)  errs.description = "Please describe your project.";
+      errs.email = t('contact.form.errors.emailInvalid');
+    if (!desc)  errs.description = t('contact.form.errors.desc');
     else if (desc.length < 20)
-      errs.description = "Please provide at least 20 characters.";
+      errs.description = t('contact.form.errors.descLength');
 
     return errs;
   };
@@ -125,7 +128,7 @@ export function Contact() {
       aria-labelledby="contact-heading"
       className="relative overflow-hidden pt-24 md:pt-32"
     >
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-6">
         {/* ── Contact card ── */}
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card/40 p-6 sm:p-10 md:p-16">
           <motion.img
@@ -137,40 +140,48 @@ export function Contact() {
             loading="lazy"
             decoding="async"
             style={reduce ? undefined : { y: yOrb, rotate: rotOrb, scale: scaleOrb }}
-            className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full object-cover opacity-40 md:h-[700px] md:w-[700px]"
+            className="pointer-events-none absolute ltr:right-0 rtl:left-0 -top-32 h-[500px] w-[500px] rounded-full object-cover opacity-40 md:h-[700px] md:w-[700px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent rtl:bg-gradient-to-l" />
 
           <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
             {/* Left — info */}
             <Reveal>
               <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-                12 — Let's Build
+                {t('contact.badge')}
               </p>
               <h2
                 id="contact-heading"
                 className="font-display text-3xl font-semibold leading-[1.05] sm:text-4xl md:text-5xl lg:text-6xl"
               >
-                Have a project
+                {t('contact.title1')}
                 <br />
-                <span className="text-gradient">in mind?</span>
+                <span className="text-gradient">{t('contact.title2')}</span>
               </h2>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-                Tell us what you're building. We typically respond within 24 hours
-                with a tailored project proposal and timeline.
+                {t('contact.description')}
               </p>
 
               <div className="mt-8 space-y-4 text-sm">
                 <a
-                  href="mailto:hello@viaara.tech"
+                  href="mailto:info@viaara-tech.com"
                   className="group flex items-center gap-3 text-foreground transition-colors hover:text-cyan"
                 >
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full glass transition-all duration-200 group-hover:border-cyan/30">
                     <Mail size={16} aria-hidden="true" />
                   </span>
-                  <span>hello@viaara.tech</span>
+                  <span>info@viaara-tech.com</span>
                 </a>
-                <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="group flex items-start gap-3 text-foreground transition-colors hover:text-cyan">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full glass transition-all duration-200 group-hover:border-cyan/30">
+                    <Phone size={16} aria-hidden="true" />
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <a href="tel:+201000843003" className="hover:underline">+20 1000 843 003</a>
+                    <a href="tel:+201000615819" className="hover:underline">+20 1000 615 819</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-muted-foreground pt-2">
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full glass">
                     <MapPin size={16} aria-hidden="true" />
                   </span>
@@ -199,39 +210,39 @@ export function Contact() {
                         <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
-                    <p className="mt-5 font-display text-2xl font-semibold">Inquiry received.</p>
+                    <p className="mt-5 font-display text-2xl font-semibold">{t('contact.form.successTitle')}</p>
                     <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                      We'll get back to you with a custom proposal within one business day.
+                      {t('contact.form.successDesc')}
                     </p>
                     <button
                       type="button"
                       onClick={() => { setSubmitted(false); formRef.current?.reset(); }}
                       className="mt-6 font-mono text-xs uppercase tracking-wider text-cyan underline-offset-4 hover:underline"
                     >
-                      Send another inquiry
+                      {t('contact.form.sendAnother')}
                     </button>
                   </motion.div>
                 ) : (
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <Field label="Name" name="name" placeholder="Your full name" error={errors.name} />
-                      <Field label="Email" name="email" type="email" placeholder="you@company.com" error={errors.email} />
+                      <Field label={t('contact.form.name')} name="name" placeholder={t('contact.form.namePlaceholder')} error={errors.name} />
+                      <Field label={t('contact.form.email')} name="email" type="email" placeholder={t('contact.form.emailPlaceholder')} error={errors.email} />
                     </div>
-                    <Field label="Company" name="company" placeholder="Your company name" required={false} />
+                    <Field label={t('contact.form.company')} name="company" placeholder={t('contact.form.companyPlaceholder')} required={false} />
                     <div>
                       <label
                         htmlFor="description"
                         className="mb-2 block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
                       >
-                        Project Description
-                        <span className="ml-1 text-cyan" aria-hidden="true">*</span>
+                        {t('contact.form.projectDesc')}
+                        <span className="ms-0.5 text-cyan" aria-hidden="true">*</span>
                       </label>
                       <textarea
                         id="description"
                         name="description"
                         rows={4}
                         required
-                        placeholder="Describe what you want to build — e.g. mobile app, ERP system, SaaS platform…"
+                        placeholder={t('contact.form.projectDescPlaceholder')}
                         aria-describedby={errors.description ? "description-error" : undefined}
                         aria-invalid={errors.description ? "true" : undefined}
                         className={`w-full resize-none rounded-xl border bg-background/40 px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/50 focus:bg-background/60 ${
@@ -253,21 +264,21 @@ export function Contact() {
                     >
                       {loading ? (
                         <>
-                          <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <svg className="h-4 w-4 animate-spin me-1" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
                           </svg>
-                          Sending…
+                          {t('contact.form.sending')}
                         </>
                       ) : (
                         <>
-                          Submit Project Inquiry
-                          <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                          {t('contact.form.submit')}
+                          <ArrowRight size={16} className="transition-transform rtl:group-hover:-translate-x-0.5 ltr:group-hover:translate-x-0.5 rtl:rotate-180" aria-hidden="true" />
                         </>
                       )}
                     </button>
                     <p className="text-center text-[11px] text-muted-foreground/50">
-                      We respect your privacy. No spam, ever.
+                      {t('contact.form.privacy')}
                     </p>
                   </div>
                 )}
@@ -286,8 +297,7 @@ export function Contact() {
             <div className="lg:col-span-2">
               <Logo size={80} />
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                An elite software engineering agency building scalable systems,
-                mobile platforms, and enterprise solutions for ambitious companies worldwide.
+                {t('footer.description')}
               </p>
               <div className="mt-5 flex items-center gap-3">
                 {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
@@ -308,7 +318,7 @@ export function Contact() {
             {/* Quick links */}
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/50">
-                Quick Links
+                {t('footer.quickLinks')}
               </p>
               <ul className="space-y-2.5">
                 {FOOTER_LINKS.map(({ label, href }) => (
@@ -327,18 +337,22 @@ export function Contact() {
             {/* Contact info */}
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/50">
-                Get in Touch
+                {t('footer.getInTouch')}
               </p>
               <ul className="space-y-2.5 text-sm text-muted-foreground">
                 <li>
-                  <a href="mailto:hello@viaara.tech" className="transition-colors hover:text-cyan">
-                    hello@viaara.tech
+                  <a href="mailto:info@viaara-tech.com" className="transition-colors hover:text-cyan">
+                    info@viaara-tech.com
                   </a>
+                </li>
+                <li className="flex flex-col gap-1 mt-1 mb-2">
+                  <a href="tel:+201000843003" className="transition-colors hover:text-cyan">+20 1000 843 003</a>
+                  <a href="tel:+201000615819" className="transition-colors hover:text-cyan">+20 1000 615 819</a>
                 </li>
                 <li>London · Dubai · Cairo</li>
                 <li className="flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-lime" aria-hidden="true" />
-                  Available for new projects
+                  {t('footer.available')}
                 </li>
               </ul>
             </div>
@@ -346,10 +360,10 @@ export function Contact() {
 
           {/* Bottom bar */}
           <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row">
-            <p>© {new Date().getFullYear()} VIAARA Tech Solutions Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} VIAARA Tech Solutions Ltd. {t('footer.rights')}</p>
             <div className="flex items-center gap-4">
-              <a href="#" className="transition-colors hover:text-foreground">Privacy Policy</a>
-              <a href="#" className="transition-colors hover:text-foreground">Terms of Service</a>
+              <a href="#" className="transition-colors hover:text-foreground">{t('footer.privacy')}</a>
+              <a href="#" className="transition-colors hover:text-foreground">{t('footer.terms')}</a>
             </div>
           </div>
         </footer>

@@ -1,0 +1,496 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "workflow": "Workflow",
+    "team": "Team",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "startProject": "Start Your Project",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "hero": {
+    "badge": "Premium Software Engineering & Digital Transformation",
+    "title1": "Engineering scalable",
+    "title2": "software systems",
+    "title3": "for modern enterprises.",
+    "subtitle": "VIAARA engineers secure, high-performance digital platforms that solve complex business challenges — partnering with leading organizations and ambitious teams worldwide.",
+    "ctaStart": "Start Your Project",
+    "ctaView": "View Our Work",
+    "stat1": "50+ Projects Delivered",
+    "stat2": "20+ Client Partnerships",
+    "stat3": "Global Delivery",
+    "marquee": [
+      "custom software",
+      "web development",
+      "mobile apps",
+      "cloud & enterprise",
+      "devops & consulting",
+      "ai & analytics",
+      "ui/ux design",
+      "digital transformation"
+    ]
+  },
+  "about": {
+    "badge": "About",
+    "title1": "Custom software built",
+    "title2": "for scale and reliability.",
+    "description": "We design, build, and maintain production-grade software for organisations that require more than a development vendor — they need an accountable technical partner. We work directly with CTOs, product managers, and business leaders across the MENA region and Europe, delivering web platforms, mobile applications, and enterprise systems that drive measurable operational impact.",
+    "pillar1": {
+      "title": "Expert Engineering Team",
+      "desc": "Senior software engineers, architects, and consultants with deep experience across enterprise and product engineering."
+    },
+    "pillar2": {
+      "title": "Transparent Communication",
+      "desc": "Regular progress updates, clear milestone tracking, and direct access to the team — no ambiguity, no surprises."
+    },
+    "pillar3": {
+      "title": "Enterprise-Grade Quality",
+      "desc": "Rigorous code reviews, automated testing, and security audits — delivering software that meets the standards of regulated industries."
+    },
+    "pillar4": {
+      "title": "Long-Term Partnership",
+      "desc": "Ongoing maintenance, performance monitoring, and continuous improvement well beyond the initial launch date."
+    },
+    "infra": {
+      "status": "Infrastructure · Active",
+      "uptimeLabel": "Uptime",
+      "regionsLabel": "Regions",
+      "responseLabel": "Response"
+    },
+    "float1": {
+      "label": "Est. 2021",
+      "value": "London · Dubai · Cairo"
+    },
+    "float2": {
+      "label": "Cloud-native",
+      "value": "Multi-region deploy"
+    }
+  },
+  "whoWeAre": {
+    "badge": "About",
+    "title1": "Engineering",
+    "title2": "digital excellence.",
+    "p1_1": "VIAARA Tech",
+    "p1_2": " is a specialized software solutions company focused on helping organizations transform complex business challenges into scalable, secure, and highly efficient digital ecosystems.",
+    "p2": "We seamlessly integrate deep technical expertise with sharp strategic thinking and modern engineering practices. The result? We deliver future-proof products that create measurable, lasting business impact for ambitious teams worldwide."
+  },
+  "services": {
+    "badge": "Services",
+    "title1": "Seven core disciplines.",
+    "title2": "One engineering partner.",
+    "description": "End-to-end software capabilities designed to solve real business problems — from product inception through to long-term operational support.",
+    "list": [
+      {
+        "title": "Custom Software Development",
+        "body": "Tailored software engineered around your unique business workflows — from internal tools and process automation to full-scale SaaS platforms built to your exact operational requirements."
+      },
+      {
+        "title": "Web Development",
+        "body": "High-performance web applications built for scalability, security, and exceptional user experience — using modern frameworks that meet the demands of enterprise traffic and global audiences."
+      },
+      {
+        "title": "Mobile App Development",
+        "body": "Cross-platform and native mobile applications delivering seamless digital experiences on iOS and Android — built to perform reliably across devices, networks, and user contexts."
+      },
+      {
+        "title": "UI/UX Design",
+        "body": "User-centred interface design focused on usability, accessibility, and engagement — from research and wireframes to polished design systems that improve product adoption and reduce friction."
+      },
+      {
+        "title": "Cloud & Enterprise Solutions",
+        "body": "Secure cloud infrastructure, system integrations, and enterprise-grade architectures — designed to support complex organisations at scale with high availability and compliance-ready configurations."
+      },
+      {
+        "title": "DevOps & IT Consulting",
+        "body": "Deployment automation, CI/CD pipelines, cloud operations, and technology consulting — helping engineering teams ship faster, reduce operational risk, and maintain production reliability."
+      },
+      {
+        "title": "AI & Data Analytics",
+        "body": "Automation, predictive analytics, business intelligence, and AI-powered solutions — turning raw data into actionable insight and embedding intelligent capabilities directly into your products."
+      }
+    ]
+  },
+  "process": {
+    "badge": "Workflow",
+    "title1": "From discovery",
+    "title2": "to production at scale.",
+    "description": "A structured, transparent delivery process that keeps stakeholders informed at every stage while prioritising speed, security, and engineering quality.",
+    "stepPrefix": "Step",
+    "steps": [
+      {
+        "title": "Discovery",
+        "desc": "We analyse your business objectives, map user requirements, and assess technical constraints to establish a clear and structured project foundation."
+      },
+      {
+        "title": "Planning",
+        "desc": "We define system architecture, data models, integration requirements, and a realistic milestone schedule with clearly scoped deliverables."
+      },
+      {
+        "title": "UI/UX Design",
+        "desc": "We design user flows, interactive prototypes, and a coherent visual identity — ensuring every interface decision is grounded in usability and brand consistency."
+      },
+      {
+        "title": "Development",
+        "desc": "Our engineers build production-grade software using modern technology stacks — with clean, well-structured code, peer-reviewed and built for long-term maintainability."
+      },
+      {
+        "title": "Testing",
+        "desc": "We conduct automated unit testing, integration testing, and security reviews to ensure the software is reliable, performant, and ready for production."
+      },
+      {
+        "title": "Deployment",
+        "desc": "We deploy to secure, scalable cloud infrastructure with zero-downtime delivery, automated rollback capabilities, and full monitoring from day one."
+      },
+      {
+        "title": "Support",
+        "desc": "We provide ongoing maintenance, proactive performance monitoring, security updates, and iterative improvements as your product and business evolve."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Projects",
+    "title1": "Selected client engagements,",
+    "title2": "delivered with precision.",
+    "description": "A selection of client engagements spanning web platforms, mobile applications, enterprise systems, and AI-powered solutions — built to specification and delivered at scale.",
+    "noProjects": "No projects in this category yet.",
+    "viewDetails": "View Details",
+    "livePreview": "Live Preview",
+    "github": "GitHub",
+    "categories": {
+      "All": "All",
+      "Mobile Application": "Mobile Application",
+      "Corporate Website": "Corporate Website",
+      "Desktop Application": "Desktop Application",
+      "Smart Home Platform": "Smart Home Platform",
+      "Media Streaming Platform": "Media Streaming Platform",
+      "Islamic & Lifestyle Platform": "Islamic & Lifestyle Platform",
+      "Productivity & AI": "Productivity & AI",
+      "Software Solutions Company": "Software Solutions Company",
+      "POS & Business Management System": "POS & Business Management System"
+    },
+    "items": {
+      "PharoXon": {
+        "title": "PharoXon",
+        "desc": "A smart home management platform that enables users to monitor and control connected devices, manage home automation, and access real-time environmental insights through an intuitive mobile experience.",
+        "longDesc": "PharoXon is a comprehensive smart home management platform designed for modern households. It empowers users to monitor and control their connected devices securely and effortlessly. By centralizing home automation, real-time environmental insights, and intelligent scheduling, PharoXon provides a unified and highly intuitive mobile experience.",
+        "keyFeatures": [
+          "Real-time monitoring of connected IoT devices",
+          "Customizable automation rules and scheduling",
+          "Live environmental and climate insights",
+          "Secure role-based user access controls"
+        ]
+      },
+      "Strova": {
+        "title": "Strova",
+        "desc": "A modern streaming platform providing live TV channels, movies, and entertainment content with a responsive user experience and content discovery features.",
+        "longDesc": "Strova is a state-of-the-art media streaming ecosystem that delivers high-quality live TV, on-demand movies, and exclusive entertainment directly to mobile devices. It boasts a highly responsive interface with advanced content discovery, personalized recommendations, and smooth adaptive bitrate streaming.",
+        "keyFeatures": [
+          "Adaptive bitrate live TV and VOD streaming",
+          "Personalized content recommendation engine",
+          "Advanced search and intuitive content discovery",
+          "Cross-device progress syncing and watchlists"
+        ]
+      },
+      "Tamanina": {
+        "title": "Tamanina",
+        "desc": "A mobile platform designed to provide users with religious content, reminders, daily activities, and community-focused digital services through a clean and accessible interface.",
+        "longDesc": "Tamanina serves as a comprehensive lifestyle companion for Islamic daily practices. By offering curated religious content, accurate prayer reminders, and community-driven services within a distraction-free, accessible design, Tamanina seamlessly integrates digital convenience with spiritual fulfillment.",
+        "keyFeatures": [
+          "Accurate prayer time calculations and notifications",
+          "Curated library of spiritual content and daily activities",
+          "Distraction-free, accessibility-first user interface",
+          "Community engagement features and localized events"
+        ]
+      },
+      "AI Personal Assistant": {
+        "title": "AI Personal Assistant",
+        "desc": "An AI-powered personal productivity assistant helping users manage tasks, schedules, reminders, and workflows through intelligent automation and conversational interactions.",
+        "longDesc": "This AI Personal Assistant transforms daily productivity by acting as an intelligent partner for managing tasks, dynamic schedules, and complex workflows. Through natural language interactions, users can automate routine reminders, delegate scheduling, and receive context-aware suggestions directly from their mobile device.",
+        "keyFeatures": [
+          "Natural language processing for conversational commands",
+          "Intelligent task categorization and priority sorting",
+          "Automated schedule optimization and reminders",
+          "Context-aware workflow suggestions"
+        ]
+      },
+      "Corbits": {
+        "title": "Corbits",
+        "desc": "A modern corporate website built for a software development company, showcasing services, projects, client engagement, and business capabilities through a premium digital experience.",
+        "longDesc": "The Corbits corporate website is designed to be a premium digital storefront for an elite software solutions provider. Leveraging a modern tech stack, the site offers blazingly fast performance while beautifully showcasing the company's service portfolio, case studies, and business capabilities through smooth animations and responsive layouts.",
+        "keyFeatures": [
+          "High-performance static generation with Next.js",
+          "Premium, fully responsive UI with smooth scroll animations",
+          "Dynamic project portfolio and case study showcases",
+          "Optimized client engagement and contact flows"
+        ]
+      },
+      "NOQTA": {
+        "title": "NOQTA",
+        "desc": "A complete point-of-sale and business management platform designed to streamline inventory, customers, sales operations, reporting, and day-to-day retail workflows.",
+        "longDesc": "NOQTA is an all-in-one desktop POS system tailored for retail environments. It integrates fast checkout processes with robust backend management, giving businesses granular control over their inventory, customer relationships, and daily sales operations. With extensive reporting features, NOQTA empowers owners to make data-driven decisions seamlessly.",
+        "keyFeatures": [
+          "Rapid checkout and reliable offline-first sales processing",
+          "Comprehensive multi-location inventory management",
+          "Detailed financial reporting and analytics dashboards",
+          "Integrated customer relationship and loyalty tracking"
+        ]
+      }
+    }
+  },
+  "featuredProjects": {
+    "title1": "Selected client",
+    "title2": "engagements.",
+    "viewAll": "View All Projects",
+    "exploreAll": "Explore All Projects"
+  },
+  "projectModal": {
+    "keyFeatures": "Key Features",
+    "techUsed": "Technologies Used",
+    "press": "Press",
+    "toClose": "to close",
+    "livePreview": "Live Preview",
+    "viewOnGithub": "View on GitHub"
+  },
+  "team": {
+    "badge": "OUR TEAM",
+    "title1": "Meet The Minds",
+    "title2": "Behind VIAARA",
+    "seeMore": "See More Team Members",
+    "meetFull": "Meet the Full Team",
+    "description": "A passionate team of engineers, designers, and technology leaders building scalable digital solutions for startups and enterprises worldwide.",
+    "leadership": "Leadership",
+    "members": {
+      "Yasser ElFassi": {
+        "role": "CEO & Founder",
+        "bio": "Leading VIAARA's business strategy, partnership growth, and digital transformation initiatives across international markets."
+      },
+      "Abdaulluh Essam": {
+        "role": "CTO & Founder",
+        "bio": "Directing technology strategy, architecting high-performance systems, and establishing engineering standards for global products."
+      },
+      "Ahmed Ali": {
+        "role": "Backend Engineer",
+        "bio": "Designing scalable microservices, database schemas, and robust API endpoints for high-traffic enterprise backends."
+      },
+      "Amr Hossam": {
+        "role": "Mobile Engineer",
+        "bio": "Building responsive, offline-first mobile applications for iOS and Android using modern cross-platform frameworks."
+      },
+      "Mohamed Reda": {
+        "role": "Frontend Developer",
+        "bio": "Developing highly interactive, pixel-perfect user interfaces with optimized rendering and state management."
+      },
+      "Abdelrahman Tarek": {
+        "role": "UI/UX Designer",
+        "bio": "Creating clean design systems, user journeys, and intuitive interfaces that balance aesthetics with seamless usability."
+      }
+    }
+  },
+  "voices": {
+    "badge": "Testimonials",
+    "title1": "What our clients",
+    "title2": "say about working with us.",
+    "items": [
+      {
+        "quote": "The engineering standards are outstanding. They delivered our high-scale commerce platform three weeks ahead of schedule with clean, well-documented, and highly maintainable code.",
+        "name": "Sarah Jenkins",
+        "role": "CEO, NovaShop International"
+      },
+      {
+        "quote": "They helped us migrate our legacy infrastructure to a modern enterprise platform. Their technical expertise in system integration and process automation is genuinely world-class.",
+        "name": "Marcus Thorne",
+        "role": "Director of Operations, Apex Logistics"
+      },
+      {
+        "quote": "Exceptional post-launch support and clear, responsive communication throughout. From UI/UX design to mobile application delivery, the team exceeded every milestone and expectation.",
+        "name": "Elena Rostova",
+        "role": "Product Lead, MedConnect Health"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title1": "Frequently asked",
+    "title2": "questions & answers.",
+    "items": [
+      {
+        "q": "How long does a typical software project take?",
+        "a": "A typical MVP or web application takes between 4 to 8 weeks depending on complexity. Full-scale enterprise platforms, custom SaaS products, or cross-platform mobile applications generally require 10 to 16 weeks, based on scope, integrations, and required compliance."
+      },
+      {
+        "q": "What technologies do you specialise in?",
+        "a": "Our core stack spans React and Next.js for frontend, Node.js, Python (FastAPI), and Laravel for backend services, Flutter for mobile, and PostgreSQL, MongoDB, and Redis for data management. Infrastructure is deployed on AWS using Docker and Kubernetes for container orchestration."
+      },
+      {
+        "q": "Do you provide post-launch maintenance and support?",
+        "a": "Yes. Every project includes a structured post-launch support period to address any issues or refinements. We also offer ongoing retainer arrangements covering performance optimisation, security monitoring, infrastructure management, and feature development."
+      },
+      {
+        "q": "Can you modernise or migrate an existing system?",
+        "a": "Yes. We regularly help organisations migrate legacy systems, refactor existing codebases, and redesign outdated interfaces — without disrupting ongoing operations. This includes database migrations, API modernisation, and platform re-architecturing."
+      },
+      {
+        "q": "Do you build cross-platform mobile applications?",
+        "a": "Yes. We build cross-platform mobile applications using Flutter, which produces fully native iOS and Android experiences from a shared codebase. This includes offline capabilities, biometric authentication, push notifications, and real-time data synchronisation."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contact",
+    "title1": "Have a project",
+    "title2": "in mind?",
+    "description": "Tell us what you're building. We typically respond within 24 hours with a tailored project proposal and timeline.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "projectDesc": "Project Description",
+      "projectDescPlaceholder": "Describe what you want to build — e.g. mobile app, ERP system, SaaS platform…",
+      "submit": "Submit Project Inquiry",
+      "sending": "Sending…",
+      "privacy": "We respect your privacy. No spam, ever.",
+      "successTitle": "Inquiry received.",
+      "successDesc": "We'll get back to you with a custom proposal within one business day.",
+      "sendAnother": "Send another inquiry",
+      "errors": {
+        "name": "Name is required.",
+        "email": "Email is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "desc": "Please describe your project.",
+        "descLength": "Please provide at least 20 characters."
+      }
+    }
+  },
+  "footer": {
+    "description": "An elite software engineering agency building scalable systems, mobile platforms, and enterprise solutions for ambitious companies worldwide.",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in Touch",
+    "available": "Available for new projects",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "cta": {
+    "badge": "Start Your Engagement",
+    "title1": "Ready to build software",
+    "title2": "that scales with your business?",
+    "description": "Partner with a dedicated engineering team of senior developers, architects, and designers — committed to delivering secure, scalable, and maintainable software.",
+    "button1": "Start Your Project",
+    "button2": "Schedule a Consultation"
+  },
+  "clients": {
+    "title": "Technologies & platforms we work with"
+  },
+  "projectsPage": {
+    "badge": "Our Portfolio",
+    "title1": "Client engagements",
+    "title2": "built to last.",
+    "desc": "Every project is engineered to exacting specifications — from MVP to enterprise-scale architecture. Browse our full portfolio below and explore the case studies behind each delivery.",
+    "stats": {
+      "delivered": "Projects delivered",
+      "verticals": "Industry verticals",
+      "uptime": "Avg. uptime SLA"
+    }
+  },
+  "teamPage": {
+    "badge": "The People",
+    "title1": "The engineers who",
+    "title2": "build what matters.",
+    "desc": "We're a senior-first team of engineers, architects, and designers who care deeply about craft, performance, and delivering real business outcomes — not just shipping code.",
+    "stats": {
+      "engineers": "Expert engineers",
+      "years": "Years operating",
+      "continents": "Continents covered"
+    },
+    "leadership": {
+      "badge": "Leadership",
+      "title1": "Engineering-led,",
+      "title2": "outcome-focused.",
+      "desc": "VIAARA was founded by engineers who grew tired of agencies that over-promised and under-delivered. Our leadership team is actively involved in every engagement — from architecture reviews to code review and client communication.",
+      "stats": {
+        "seniority": "Avg. seniority",
+        "retention": "Client retention",
+        "delivery": "On-time delivery"
+      }
+    },
+    "culture": {
+      "badge": "Team Culture",
+      "title1": "How we work,",
+      "title2": "and why it works.",
+      "desc": "Six principles that guide how every member of the VIAARA team thinks, collaborates, and delivers.",
+      "values": {
+        "execution": {
+          "title": "Execution Over Perfection",
+          "desc": "We ship fast, iterate often, and improve continuously. Momentum matters more than waiting for perfect."
+        },
+        "quality": {
+          "title": "Quality by Default",
+          "desc": "Every line of code is reviewed, tested, and built to production standards from day one — not as an afterthought."
+        },
+        "remote": {
+          "title": "Remote-First Culture",
+          "desc": "Our distributed team works asynchronously across time zones with clear communication rituals and shared tooling."
+        },
+        "partnership": {
+          "title": "Client Partnership",
+          "desc": "We treat every engagement as a long-term partnership — transparent, accountable, and invested in your success."
+        },
+        "open": {
+          "title": "Open by Default",
+          "desc": "We contribute to open source, share knowledge through documentation, and believe in the power of shared learning."
+        },
+        "expertise": {
+          "title": "T-Shaped Expertise",
+          "desc": "Every engineer has deep domain expertise and broad cross-functional skills — enabling genuine full-stack delivery."
+        }
+      }
+    }
+  },
+  "missionVision": {
+    "mission": {
+      "badge": "Our Mission",
+      "title1": "To deliver cutting-edge software solutions that drive",
+      "title2": "digital transformation",
+      "desc": "We are dedicated to improving operational efficiency and empowering businesses to thrive securely and sustainably in a rapidly evolving technology-driven world."
+    },
+    "vision": {
+      "badge": "Our Vision",
+      "title1": "To become the",
+      "title2": "global partner",
+      "title3": "of choice for technological innovation.",
+      "desc": "We aim to set new standards of excellence in software engineering, consistently delivering products that redefine industry benchmarks and elevate digital experiences."
+    }
+  },
+  "coreValues": {
+    "badge": "Our DNA",
+    "title1": "Core",
+    "title2": "Values",
+    "desc": "These principles guide our engineering practices, our culture, and how we partner with our clients every single day.",
+    "items": [
+      {
+        "title": "Innovation",
+        "desc": "Constantly exploring new technologies and better solutions to keep our clients ahead of the curve."
+      },
+      {
+        "title": "Quality",
+        "desc": "Unwavering commitment to engineering excellence, scalable architectures, and long-term reliability."
+      },
+      {
+        "title": "Integrity",
+        "desc": "Transparent communication, honest timelines, and building trusted partnerships based on mutual respect."
+      },
+      {
+        "title": "Agility",
+        "desc": "Rapid adaptation to changing business requirements and market dynamics without sacrificing quality."
+      }
+    ]
+  }
+}
