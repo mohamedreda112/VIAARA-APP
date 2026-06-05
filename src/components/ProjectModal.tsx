@@ -393,22 +393,26 @@ export function ProjectModal({ project, onClose }: Props) {
                           {t('projectModal.keyFeatures')}
                         </p>
                         <ul className="flex flex-col gap-2">
-                          {(t(`projects.items.${project.title}.keyFeatures`, { returnObjects: true }) as string[] ?? project.keyFeatures).map((kf, i) => (
-                            <motion.li
-                              key={i}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.16 + i * 0.04, duration: 0.25 }}
-                              className="flex items-start gap-2 text-[13px] text-muted-foreground sm:text-sm"
-                            >
-                              <span
-                                className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                                style={{ background: project.accentColorSolid }}
-                                aria-hidden="true"
-                              />
-                              {kf}
-                            </motion.li>
-                          ))}
+                          {(() => {
+                            const featuresRaw = t(`projects.items.${project.title}.keyFeatures`, { returnObjects: true });
+                            const features = Array.isArray(featuresRaw) ? featuresRaw as string[] : project.keyFeatures;
+                            return (features || []).map((kf, i) => (
+                              <motion.li
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.16 + i * 0.04, duration: 0.25 }}
+                                className="flex items-start gap-2 text-[13px] text-muted-foreground sm:text-sm"
+                              >
+                                <span
+                                  className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                  style={{ background: project.accentColorSolid }}
+                                  aria-hidden="true"
+                                />
+                                {kf}
+                              </motion.li>
+                            ));
+                          })()}
                         </ul>
                       </div>
                     )}

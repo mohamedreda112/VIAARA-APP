@@ -127,12 +127,14 @@ export function Hero() {
       {/* Bottom marquee */}
       <div className="marquee-mask absolute bottom-6 left-0 right-0 overflow-hidden" aria-hidden="true">
         <div className="flex w-max animate-drift gap-8 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground/60">
-          {Array.from({ length: 2 }).flatMap((_, j) =>
-            (t('hero.marquee', { returnObjects: true }) as string[]).flatMap((t, i) => [
+          {Array.from({ length: 2 }).flatMap((_, j) => {
+            const marqueeRaw = t('hero.marquee', { returnObjects: true });
+            const marqueeArray = Array.isArray(marqueeRaw) ? marqueeRaw as string[] : [];
+            return marqueeArray.flatMap((t, i) => [
               <span key={`${j}-${i}`}>{t}</span>,
               <span key={`${j}-${i}-dot`}>·</span>
-            ]).slice(0, -1)
-          )}
+            ]).slice(0, -1);
+          })}
         </div>
       </div>
     </section>

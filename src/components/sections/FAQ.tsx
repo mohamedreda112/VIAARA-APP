@@ -29,7 +29,8 @@ const faqs = [
 
 export function FAQ() {
   const { t } = useTranslation();
-  const faqs = t('faq.items', { returnObjects: true }) as { q: string; a: string }[];
+  const faqsRaw = t('faq.items', { returnObjects: true });
+  const faqs = Array.isArray(faqsRaw) ? faqsRaw as { q: string; a: string }[] : [];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => {

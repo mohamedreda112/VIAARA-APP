@@ -12,7 +12,8 @@ const voices = [
 
 export function Voices() {
   const { t } = useTranslation();
-  const voices = t('voices.items', { returnObjects: true }) as { quote: string; name: string; role: string }[];
+  const voicesRaw = t('voices.items', { returnObjects: true });
+  const voices = Array.isArray(voicesRaw) ? voicesRaw as { quote: string; name: string; role: string }[] : [];
   const ref = useRef<HTMLDivElement | null>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
