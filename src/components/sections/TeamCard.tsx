@@ -17,13 +17,13 @@ export function TeamCard({ member }: TeamCardProps) {
       whileHover={{ y: -8 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       tabIndex={0}
-      aria-label={`${member.name}, ${t(`team.members.${member.name}.role`, member.role)}`}
+      aria-label={`${member.name}, ${member.role}`}
     >
       {/* Photo with 4:5 aspect ratio */}
       <div className="team-card-image-wrap">
         <img
           src={member.image}
-          alt={`${member.name} - ${t(`team.members.${member.name}.role`, member.role)}`}
+          alt={`${member.name} - ${member.role}`}
           className="team-card-image"
           loading="lazy"
         />
@@ -32,7 +32,7 @@ export function TeamCard({ member }: TeamCardProps) {
       {/* Info Section */}
       <div className="team-card-info">
         <span className="team-card-role-badge">
-          {t(`team.members.${member.name}.role`, member.role)}
+          {member.role}
         </span>
 
         <h3 className="team-card-name">{member.name}</h3>

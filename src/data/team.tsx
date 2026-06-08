@@ -18,7 +18,7 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     name: "Yasser ElFassi",
-    role: "CEO & Founder",
+    role: "CEO & FOUNDER",
     bio: "Leading VIAARA's business strategy, partnership growth, and digital transformation initiatives across international markets.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--cyan)",
@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Abdaulluh Essam",
-    role: "CTO & Founder",
+    role: "CTO & FOUNDER",
     bio: "Directing technology strategy, architecting high-performance systems, and establishing engineering standards for global products.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--cyan)",
@@ -36,7 +36,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Ahmed Ali",
-    role: "Backend Engineer",
+    role: "BACKEND ENGINEER",
     bio: "Designing scalable microservices, database schemas, and robust API endpoints for high-traffic enterprise backends.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--cyan)",
@@ -44,7 +44,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Amr Hossam",
-    role: "Mobile Engineer",
+    role: "MOBILE ENGINEER",
     bio: "Building responsive, offline-first mobile applications for iOS and Android using modern cross-platform frameworks.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--lime)",
@@ -52,7 +52,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Mohamed Reda",
-    role: "Frontend Developer",
+    role: "FRONTEND DEVELOPER",
     bio: "Developing highly interactive, pixel-perfect user interfaces with optimized rendering and state management.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--lime)",
@@ -60,7 +60,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Abdelrahman Tarek",
-    role: "UI/UX Designer",
+    role: "UI/UX DESIGNER",
     bio: "Creating clean design systems, user journeys, and intuitive interfaces that balance aesthetics with seamless usability.",
     socials: { github: "#", linkedin: "#" },
     glow: "var(--lime)",

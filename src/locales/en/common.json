@@ -21,6 +21,8 @@
     "subtitle": "VIAARA engineers secure, high-performance digital platforms that solve complex business challenges — partnering with leading organizations and ambitious teams worldwide.",
     "ctaStart": "Start Your Project",
     "ctaView": "View Our Work",
+    "ctaProfile": "Company Profile",
+    "profileTrust": "Company Profile Available (16 Pages PDF)",
     "stat1": "50+ Projects Delivered",
     "stat2": "20+ Client Partnerships",
     "stat3": "Global Delivery",
@@ -266,27 +268,21 @@
     "leadership": "Leadership",
     "members": {
       "Yasser ElFassi": {
-        "role": "CEO & Founder",
         "bio": "Leading VIAARA's business strategy, partnership growth, and digital transformation initiatives across international markets."
       },
       "Abdaulluh Essam": {
-        "role": "CTO & Founder",
         "bio": "Directing technology strategy, architecting high-performance systems, and establishing engineering standards for global products."
       },
       "Ahmed Ali": {
-        "role": "Backend Engineer",
         "bio": "Designing scalable microservices, database schemas, and robust API endpoints for high-traffic enterprise backends."
       },
       "Amr Hossam": {
-        "role": "Mobile Engineer",
         "bio": "Building responsive, offline-first mobile applications for iOS and Android using modern cross-platform frameworks."
       },
       "Mohamed Reda": {
-        "role": "Frontend Developer",
         "bio": "Developing highly interactive, pixel-perfect user interfaces with optimized rendering and state management."
       },
       "Abdelrahman Tarek": {
-        "role": "UI/UX Designer",
         "bio": "Creating clean design systems, user journeys, and intuitive interfaces that balance aesthetics with seamless usability."
       }
     }

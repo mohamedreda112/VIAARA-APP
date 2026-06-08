@@ -247,18 +247,34 @@
     max-width: 440px;
     margin: 0 auto;
     border-radius: 20px;
+    align-items: center;
+    text-align: center;
   }
   
   .team-card-image-wrap {
     width: 100%;
+    max-width: 280px;
     flex: 0 0 auto;
     height: 260px;
     aspect-ratio: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
   }
   
+  .team-card-image {
+    object-position: center top;
+  }
+
   .team-card-info {
     padding-inline-start: 0;
     padding-top: 1.25rem;
     width: 100%;
+    align-items: center;
+  }
+
+  .team-card-socials {
+    justify-content: center;
+    gap: 14px;
   }
 }

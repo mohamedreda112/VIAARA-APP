@@ -1,0 +1,34 @@
+{
+  "d:\\VIAARA\\src\\components\\sections\\about\\WhoWeAre.tsx": [
+    "pt-28",
+    "pt-36",
+    "gap-20"
+  ],
+  "d:\\VIAARA\\src\\components\\sections\\Contact.tsx": [
+    "pt-20",
+    "pt-24"
+  ],
+  "d:\\VIAARA\\src\\components\\sections\\Hero.tsx": [
+    "pt-24",
+    "pt-28",
+    "pb-20"
+  ],
+  "d:\\VIAARA\\src\\components\\sections\\Stats.tsx": [
+    "mt-20"
+  ],
+  "d:\\VIAARA\\src\\components\\sections\\Work.tsx": [
+    "mt-20"
+  ],
+  "d:\\VIAARA\\src\\components\\ui\\drawer.tsx": [
+    "mt-24"
+  ],
+  "d:\\VIAARA\\src\\routes\\projects.tsx": [
+    "pt-36",
+    "pb-20"
+  ],
+  "d:\\VIAARA\\src\\routes\\team.tsx": [
+    "pt-36",
+    "pb-20",
+    "py-24"
+  ]
+}

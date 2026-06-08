@@ -1,10 +1,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { Logo } from "./Logo";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./ui/tooltip";
 
 /* ─────────────────────────────────────────────
    Page-level nav links (use router Link)
@@ -202,6 +203,7 @@ export function Nav() {
                 </li>
               );
             })}
+
           </ul>
         </nav>
 
@@ -215,19 +217,42 @@ export function Nav() {
             {t('nav.contact')}
           </a>
 
+          {/* Company Profile Icon */}
+          <TooltipProvider>
+            <Tooltip delayDuration={200}>
+              <TooltipTrigger asChild>
+                <a
+                  href="/pdf/Viaara_company_profile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t('hero.ctaProfile')}
+                  className="glass hidden md:flex group relative items-center justify-center rounded-full border border-cyan/40 p-2.5 transition-all duration-300 hover:scale-[1.05] hover:border-cyan/80 hover:bg-cyan/10 hover:shadow-[0_0_15px_-3px_var(--cyan)] outline-none"
+                >
+                  <FileText size={18} className="text-cyan transition-transform duration-300" />
+                  <div className="absolute inset-0 -z-10 rounded-full bg-cyan/20 blur-[6px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" sideOffset={8} className="bg-card/90 backdrop-blur-md border border-white/10 text-foreground font-medium text-sm px-3 py-1.5 shadow-xl">
+                {t('hero.ctaProfile')}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="glass rounded-full p-2.5 transition-all duration-200 hover:bg-white/10 outline-none">
+              <button aria-label="Select Language" className="glass rounded-full p-2.5 transition-all duration-200 hover:bg-white/10 outline-none">
                 <Globe size={18} className="text-foreground" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-card/90 backdrop-blur-md border-white/10 w-32 mt-2">
-              <DropdownMenuItem onClick={() => switchLanguage('en')} className="cursor-pointer focus:bg-white/10 focus:text-cyan">
-                🇺🇸 {t('nav.en')}
+            <DropdownMenuContent align="end" className="bg-card/90 backdrop-blur-md border-white/10 w-40 p-1.5 mt-2">
+              <DropdownMenuItem onClick={() => switchLanguage('ar')} className="cursor-pointer focus:bg-white/10 focus:text-cyan flex items-center gap-2.5 py-2">
+                <img src="https://flagcdn.com/sa.svg" alt="Saudi Arabia Flag" width={20} height={14} className="rounded-[2px] shadow-[0_0_4px_rgba(0,0,0,0.3)] object-cover flex-shrink-0" />
+                <span className="font-medium">{t('nav.ar')}</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => switchLanguage('ar')} className="cursor-pointer focus:bg-white/10 focus:text-cyan">
-                🇸🇦 {t('nav.ar')}
+              <DropdownMenuItem onClick={() => switchLanguage('en')} className="cursor-pointer focus:bg-white/10 focus:text-cyan flex items-center gap-2.5 py-2">
+                <img src="https://flagcdn.com/us.svg" alt="United States Flag" width={20} height={14} className="rounded-[2px] shadow-[0_0_4px_rgba(0,0,0,0.3)] object-cover flex-shrink-0" />
+                <span className="font-medium">{t('nav.en')}</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -341,7 +366,7 @@ export function Nav() {
                   );
                 })}
 
-                {/* CTA */}
+                {/* Company Profile Mobile */}
                 <motion.li
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -350,6 +375,30 @@ export function Nav() {
                     duration: 0.25,
                   }}
                   className="mt-1 pt-1 border-t border-white/5"
+                >
+                  <a
+                    onClick={handleLinkClick}
+                    href="/pdf/Viaara_company_profile.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm text-cyan/90 transition-all duration-200 hover:bg-cyan/10 hover:text-cyan"
+                  >
+                    <span className="flex items-center gap-2">
+                      <FileText size={16} />
+                      {t('hero.ctaProfile')}
+                    </span>
+                  </a>
+                </motion.li>
+
+                {/* CTA */}
+                <motion.li
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: (pageLinks.length + anchorLinks.length + 2) * 0.04,
+                    duration: 0.25,
+                  }}
+                  className="mt-2"
                 >
                   <a
                     onClick={handleLinkClick}

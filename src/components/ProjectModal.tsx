@@ -108,8 +108,8 @@ function Carousel({ project }: { project: ProjectData }) {
     <div className="flex h-full flex-col gap-3">
 
       {/* ── Main slide ── */}
-      <div className="relative flex-1 overflow-hidden rounded-2xl border border-white/[0.07] bg-zinc-950"
-           style={{ minHeight: 200 }}>
+      <div className="relative flex-1 overflow-hidden rounded-[20px] border border-white/[0.07] bg-zinc-950 [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
+           style={{ minHeight: "100%" }}>
 
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
@@ -246,22 +246,23 @@ export function ProjectModal({ project, onClose }: Props) {
 
           {/* ── Centering shell ── */}
           <div
-            className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-5 md:p-8"
+            className="fixed inset-0 z-[101] overflow-y-auto p-4 sm:p-5 md:p-8"
             role="dialog"
             aria-modal="true"
             aria-label={`${project.title} — project details`}
+            data-lenis-prevent="true"
           >
-            {/* ── Card ── */}
-            <motion.div
-              key="card"
-              className="relative w-full"
-              style={{ maxWidth: 900 }}
-              initial={{ opacity: 0, scale: 0.91, y: 24 }}
-              animate={{ opacity: 1, scale: 1,    y: 0  }}
-              exit={{    opacity: 0, scale: 0.91, y: 24 }}
-              transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="flex min-h-full items-center justify-center py-4 md:py-8">
+              {/* ── Card ── */}
+              <motion.div
+                key="card"
+                className="relative w-full max-w-full md:max-w-[900px]"
+                initial={{ opacity: 0, scale: 0.91, y: 24 }}
+                animate={{ opacity: 1, scale: 1,    y: 0  }}
+                exit={{    opacity: 0, scale: 0.91, y: 24 }}
+                transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                onClick={(e) => e.stopPropagation()}
+              >
               {/* Neon border trace */}
               <NeonBorder color={project.accentColorSolid} />
 
@@ -321,8 +322,7 @@ export function ProjectModal({ project, onClose }: Props) {
 
                   {/* LEFT — carousel */}
                   <motion.div
-                    className="w-full p-4 sm:p-5 md:w-[52%] md:flex-shrink-0 md:p-6"
-                    style={{ minHeight: 320 }}
+                    className="w-full p-4 sm:p-5 md:w-[52%] md:flex-shrink-0 md:p-6 h-[220px] md:h-auto md:min-h-[320px]"
                     initial={{ opacity: 0, x: -14 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1, duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
@@ -347,14 +347,14 @@ export function ProjectModal({ project, onClose }: Props) {
                   {/* RIGHT — details */}
                   <motion.div
                     ref={rightPanelRef}
-                    className="modal-right-scroll flex min-w-0 flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-5 md:p-6"
-                    style={{ maxHeight: "min(74vh, 580px)" }}
+                    className="modal-right-scroll flex min-w-0 flex-1 flex-col gap-5 md:gap-4 p-4 sm:p-5 md:p-6 md:overflow-y-auto md:max-h-[min(74vh,580px)]"
+                    data-lenis-prevent="true"
                     initial={{ opacity: 0, x: 14 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.14, duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
                   >
                     {/* Title block */}
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3 mb-[12px] md:mb-0">
                       <div
                         className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-white/10"
                         style={{ background: project.accentColor }}
@@ -510,6 +510,7 @@ export function ProjectModal({ project, onClose }: Props) {
                 </div>
               </div>
             </motion.div>
+            </div>
           </div>
         </>
       )}
