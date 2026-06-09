@@ -1,6 +1,6 @@
 import { Reveal } from "../Reveal";
 import { Logo } from "../Logo";
-import { ArrowRight, Mail, MapPin, Github, Twitter, Linkedin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Facebook, Instagram, Linkedin, Phone } from "lucide-react";
 import orb from "@/assets/orb-2.jpg";
 import { useState, useRef, type FormEvent } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
@@ -16,9 +16,9 @@ const getFooterLinks = (t: any) => [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "GitHub",   href: "https://github.com",   icon: Github },
-  { label: "Twitter",  href: "https://twitter.com",  icon: Twitter },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/viaara-tech-egypt/posts/?feedView=all", icon: Linkedin },
+  { label: "Instagram", href: "https://www.instagram.com/viaara_tech/", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61590481892370", icon: Facebook },
 ];
 
 /* ── Form field ── */

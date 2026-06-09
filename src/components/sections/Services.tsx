@@ -13,40 +13,34 @@ const getServices = (t: any): { icon: LucideIcon; title: string; body: string; t
     tag: "01",
   },
   {
-    icon: Globe,
+    icon: Smartphone,
     title: t('services.list.1.title'),
     body: t('services.list.1.body'),
     tag: "02",
   },
   {
-    icon: Smartphone,
+    icon: Palette,
     title: t('services.list.2.title'),
     body: t('services.list.2.body'),
     tag: "03",
   },
   {
-    icon: Palette,
+    icon: Cloud,
     title: t('services.list.3.title'),
     body: t('services.list.3.body'),
     tag: "04",
   },
   {
-    icon: Cloud,
+    icon: GitBranch,
     title: t('services.list.4.title'),
     body: t('services.list.4.body'),
     tag: "05",
   },
   {
-    icon: GitBranch,
+    icon: Brain,
     title: t('services.list.5.title'),
     body: t('services.list.5.body'),
     tag: "06",
-  },
-  {
-    icon: Brain,
-    title: t('services.list.6.title'),
-    body: t('services.list.6.body'),
-    tag: "07",
   },
 ];
 

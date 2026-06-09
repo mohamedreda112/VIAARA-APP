@@ -44,19 +44,19 @@
     "description": "We design, build, and maintain production-grade software for organisations that require more than a development vendor — they need an accountable technical partner. We work directly with CTOs, product managers, and business leaders across the MENA region and Europe, delivering web platforms, mobile applications, and enterprise systems that drive measurable operational impact.",
     "pillar1": {
       "title": "Expert Engineering Team",
-      "desc": "Senior software engineers, architects, and consultants with deep experience across enterprise and product engineering."
+      "desc": "Top-tier talent delivering technical excellence and innovation."
     },
     "pillar2": {
-      "title": "Transparent Communication",
-      "desc": "Regular progress updates, clear milestone tracking, and direct access to the team — no ambiguity, no surprises."
+      "title": "Proven Track Record of Delivery",
+      "desc": "Reliable, on-time project execution with guaranteed results."
     },
     "pillar3": {
-      "title": "Enterprise-Grade Quality",
-      "desc": "Rigorous code reviews, automated testing, and security audits — delivering software that meets the standards of regulated industries."
+      "title": "Transparent Communication",
+      "desc": "Open collaboration with full project visibility at every stage."
     },
     "pillar4": {
-      "title": "Long-Term Partnership",
-      "desc": "Ongoing maintenance, performance monitoring, and continuous improvement well beyond the initial launch date."
+      "title": "Long-term Post-Launch Support",
+      "desc": "Dedicated maintenance for lasting performance and seamless growth."
     },
     "infra": {
       "status": "Infrastructure · Active",
@@ -77,43 +77,39 @@
     "badge": "About",
     "title1": "Engineering",
     "title2": "digital excellence.",
-    "p1_1": "VIAARA Tech",
-    "p1_2": " is a specialized software solutions company focused on helping organizations transform complex business challenges into scalable, secure, and highly efficient digital ecosystems.",
+    "p1_1": "VIAARA TECH",
+    "p1_2": " is a forward-thinking software solutions provider specializing in transforming complex business challenges into seamless, scalable, and secure digital realities.",
     "p2": "We seamlessly integrate deep technical expertise with sharp strategic thinking and modern engineering practices. The result? We deliver future-proof products that create measurable, lasting business impact for ambitious teams worldwide."
   },
   "services": {
     "badge": "Services",
-    "title1": "Seven core disciplines.",
+    "title1": "Six core disciplines.",
     "title2": "One engineering partner.",
     "description": "End-to-end software capabilities designed to solve real business problems — from product inception through to long-term operational support.",
     "list": [
       {
         "title": "Custom Software Development",
-        "body": "Tailored software engineered around your unique business workflows — from internal tools and process automation to full-scale SaaS platforms built to your exact operational requirements."
+        "body": "Tailored, scalable software built to optimize your unique business workflows."
       },
       {
-        "title": "Web Development",
-        "body": "High-performance web applications built for scalability, security, and exceptional user experience — using modern frameworks that meet the demands of enterprise traffic and global audiences."
-      },
-      {
-        "title": "Mobile App Development",
-        "body": "Cross-platform and native mobile applications delivering seamless digital experiences on iOS and Android — built to perform reliably across devices, networks, and user contexts."
+        "title": "Web & Mobile App Development",
+        "body": "High-performance, cross-platform apps delivering seamless user experiences."
       },
       {
         "title": "UI/UX Design",
-        "body": "User-centred interface design focused on usability, accessibility, and engagement — from research and wireframes to polished design systems that improve product adoption and reduce friction."
+        "body": "Intuitive, visually stunning interfaces crafted to maximize user engagement."
       },
       {
         "title": "Cloud & Enterprise Solutions",
-        "body": "Secure cloud infrastructure, system integrations, and enterprise-grade architectures — designed to support complex organisations at scale with high availability and compliance-ready configurations."
+        "body": "Secure cloud infrastructure and seamless system integrations for modern enterprises."
       },
       {
         "title": "DevOps & IT Consulting",
-        "body": "Deployment automation, CI/CD pipelines, cloud operations, and technology consulting — helping engineering teams ship faster, reduce operational risk, and maintain production reliability."
+        "body": "Strategic tech guidance and automated pipelines for faster, reliable deployment."
       },
       {
         "title": "AI & Data Analytics",
-        "body": "Automation, predictive analytics, business intelligence, and AI-powered solutions — turning raw data into actionable insight and embedding intelligent capabilities directly into your products."
+        "body": "Smart automation and predictive data insights to drive smarter business decisions."
       }
     ]
   },
@@ -455,19 +451,19 @@
       "badge": "Our Mission",
       "title1": "To deliver cutting-edge software solutions that drive",
       "title2": "digital transformation",
-      "desc": "We are dedicated to improving operational efficiency and empowering businesses to thrive securely and sustainably in a rapidly evolving technology-driven world."
+      "desc": "To deliver cutting-edge software solutions that drive digital transformation, enhance operational efficiency, and empower businesses to thrive in a tech-driven world."
     },
     "vision": {
       "badge": "Our Vision",
       "title1": "To become the",
       "title2": "global partner",
       "title3": "of choice for technological innovation.",
-      "desc": "We aim to set new standards of excellence in software engineering, consistently delivering products that redefine industry benchmarks and elevate digital experiences."
+      "desc": "To be the global partner of choice for technological innovation, setting new standards of excellence in the software development industry."
     }
   },
   "coreValues": {
-    "badge": "Our DNA",
-    "title1": "Core",
+    "badge": "Core Values",
+    "title1": "Our Core",
     "title2": "Values",
     "desc": "These principles guide our engineering practices, our culture, and how we partner with our clients every single day.",
     "items": [
@@ -477,7 +473,7 @@
       },
       {
         "title": "Quality",
-        "desc": "Unwavering commitment to engineering excellence, scalable architectures, and long-term reliability."
+        "desc": "Uncompromising commitment to engineering excellence, scalable architectures, and long-term reliability."
       },
       {
         "title": "Integrity",
@@ -485,7 +481,7 @@
       },
       {
         "title": "Agility",
-        "desc": "Rapid adaptation to changing business requirements and market dynamics without sacrificing quality."
+        "desc": "Adapting quickly to changing business requirements and market dynamics without sacrificing quality."
       }
     ]
   }

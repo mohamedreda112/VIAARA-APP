@@ -11,13 +11,13 @@ import { Contact } from "@/components/sections/Contact";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — VIAARA Software Engineering" },
+      { title: "About | VIAARA TECH — Software Solutions Company" },
       {
         name: "description",
         content:
-          "Viaara Tech is a software solutions company focused on helping organizations transform complex business challenges into scalable, secure, and efficient digital solutions.",
+          "VIAARA TECH delivers custom software development, AI solutions, web applications, mobile applications, cloud solutions, DevOps consulting, and digital transformation services.",
       },
-      { property: "og:title", content: "About — VIAARA Software Engineering" },
+      { property: "og:title", content: "About | VIAARA TECH — Software Solutions Company" },
     ],
   }),
   component: AboutPage,

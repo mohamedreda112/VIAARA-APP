@@ -14,17 +14,17 @@ import { Contact } from "@/components/sections/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VIAARA — Custom Software House & Systems Engineering" },
+      { title: "VIAARA TECH | Software Solutions Company" },
       {
         name: "description",
         content:
-          "VIAARA is an elite software engineering agency developing scalable web apps, mobile apps, enterprise ERP solutions, and digital products for ambitious brands.",
+          "VIAARA TECH delivers custom software development, AI solutions, web applications, mobile applications, cloud solutions, DevOps consulting, and digital transformation services.",
       },
-      { property: "og:title", content: "VIAARA — Custom Software House & Systems Engineering" },
+      { property: "og:title", content: "VIAARA TECH | Software Solutions Company" },
       {
         property: "og:description",
         content:
-          "High-performance custom software, web platforms, and enterprise systems engineered with craft from concept to production at scale.",
+          "VIAARA TECH delivers custom software development, AI solutions, web applications, mobile applications, cloud solutions, DevOps consulting, and digital transformation services.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
