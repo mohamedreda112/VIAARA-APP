@@ -35,7 +35,7 @@ export function CoreValues() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden py-24 bg-background/50">
+    <section className="relative overflow-hidden py-10 md:py-16 bg-background/50">
       <div className="mx-auto max-w-7xl px-6">
         
         {/* Header */}

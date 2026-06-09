@@ -20,7 +20,8 @@ export const team: TeamMember[] = [
     name: "Yasser ElFassi",
     role: "CEO & FOUNDER",
     bio: "Leading VIAARA's business strategy, partnership growth, and digital transformation initiatives across international markets.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--cyan)",
     isFounder: true,
     image: yasserImg,
@@ -29,7 +30,8 @@ export const team: TeamMember[] = [
     name: "Abdaulluh Essam",
     role: "CTO & FOUNDER",
     bio: "Directing technology strategy, architecting high-performance systems, and establishing engineering standards for global products.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--cyan)",
     isFounder: true,
     image: abdaulluhImg,
@@ -38,7 +40,8 @@ export const team: TeamMember[] = [
     name: "Ahmed Ali",
     role: "BACKEND ENGINEER",
     bio: "Designing scalable microservices, database schemas, and robust API endpoints for high-traffic enterprise backends.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--cyan)",
     image: ahmedImg,
   },
@@ -46,7 +49,8 @@ export const team: TeamMember[] = [
     name: "Amr Hossam",
     role: "MOBILE ENGINEER",
     bio: "Building responsive, offline-first mobile applications for iOS and Android using modern cross-platform frameworks.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--lime)",
     image: amrImg,
   },
@@ -54,7 +58,8 @@ export const team: TeamMember[] = [
     name: "Mohamed Reda",
     role: "FRONTEND DEVELOPER",
     bio: "Developing highly interactive, pixel-perfect user interfaces with optimized rendering and state management.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--lime)",
     image: mohamedImg,
   },
@@ -62,7 +67,8 @@ export const team: TeamMember[] = [
     name: "Abdelrahman Tarek",
     role: "UI/UX DESIGNER",
     bio: "Creating clean design systems, user journeys, and intuitive interfaces that balance aesthetics with seamless usability.",
-    socials: { github: "#", linkedin: "#" },
+    // TODO: Replace with real profile links when available
+    socials: { github: "javascript:void(0)", linkedin: "javascript:void(0)" },
     glow: "var(--lime)",
     image: abdelrahmanImg,
   },

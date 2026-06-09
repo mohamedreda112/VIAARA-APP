@@ -226,7 +226,7 @@ export function ProjectModal({ project, onClose }: Props) {
     if (project && rightPanelRef.current) {
       rightPanelRef.current.scrollTop = 0;
     }
-  }, [project?.title]);
+  }, [project]);
 
   return (
     <AnimatePresence>
