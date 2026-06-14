@@ -32,11 +32,11 @@ export function WhoWeAre() {
             <div className="relative">
               {/* Premium structural border */}
               <div 
-                className="absolute start- top-0 h-full w-[2px] bg-gradient-to-b from-cyan/40 via-cyan/10 to-transparent hidden md:block"
+                className="absolute start-0 top-0 h-full w-[2px] bg-gradient-to-b from-cyan/40 via-cyan/10 to-transparent"
                 aria-hidden="true" 
               />
               
-              <div className="space-y-6 text-base leading-[1.8] text-muted-foreground md:text-lg">
+              <div className="ps-4 md:ps-5 lg:ps-8 space-y-6 text-base leading-[1.8] text-muted-foreground md:text-lg">
                 <p>
                   <strong className="font-semibold text-foreground">{t('whoWeAre.p1_1')}</strong>{t('whoWeAre.p1_2')}
                 </p>

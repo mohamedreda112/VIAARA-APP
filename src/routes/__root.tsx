@@ -5,7 +5,7 @@ import {
   createRootRouteWithContext,
   useRouterState,
 } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "@/components/PageTransition";
 
@@ -117,14 +117,21 @@ function RootComponent() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [currentPath]);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <I18nextProvider i18n={i18n}>
       <QueryClientProvider client={queryClient}>
-        <AnimatePresence mode="wait" initial={false}>
-          <PageTransition routeKey={currentPath}>
-            <Outlet />
-          </PageTransition>
-        </AnimatePresence>
+        <div key={mounted ? i18n.language : "ssr"} className="contents">
+          <AnimatePresence mode="wait" initial={false}>
+            <PageTransition routeKey={currentPath}>
+              <Outlet />
+            </PageTransition>
+          </AnimatePresence>
+        </div>
       </QueryClientProvider>
     </I18nextProvider>
   );

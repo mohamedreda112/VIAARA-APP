@@ -14,13 +14,22 @@ const resources = {
   },
 };
 
+const isBrowser = typeof window !== 'undefined';
+const savedLanguage = isBrowser ? window.localStorage.getItem('language') || 'en' : 'en';
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
+    lng: savedLanguage,
     fallbackLng: 'en',
     supportedLngs: ['en', 'ar'],
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'language',
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
@@ -29,10 +38,17 @@ i18n
     },
   });
 
+// Apply document attributes lang & dir immediately in browser environment
+if (isBrowser) {
+  document.documentElement.lang = savedLanguage;
+  document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr';
+}
+
 i18n.on('languageChanged', (lng) => {
   if (typeof document !== 'undefined') {
     document.documentElement.lang = lng;
     document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    window.localStorage.setItem('language', lng);
   }
 });
 
